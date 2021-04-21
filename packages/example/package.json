@@ -1,0 +1,50 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.20.10",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.2.4",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "concurrently 'react-scripts start'",
+    "lint": "concurrently 'npm run lint:code && npm run lint:other'",
+    "lint:code": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:other": "prettier --check '**/*.{scss,md,json,yml}'",
+    "lint:fix": "concurrently 'npm run lint:fix:code && npm run lint:fix:other'",
+    "lint:fix:code": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "lint:fix:other": "prettier --write '**/*.{scss,md,json,yml}'",
+    "lint:ci": "concurrently 'npm run lint:code && npm run lint:other'",
+    "build": "concurrently 'react-scripts build'",
+    "test": "concurrently 'react-scripts test'",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

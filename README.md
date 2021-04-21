@@ -6,19 +6,19 @@ Shared react components across Alchemist.
 
 ### `npm run build`
 
-Builds all packages.
+Concurrently builds all packages.
 
 ### `npm run start`
 
-Installs dependencies across all packages and starts server.
+Installs dependencies across all packages and conccurently starts server.
 
 ### `npm run lint`
 
-Lints all packages.
+Concurrently ints all packages.
 
 ### `npm run lint:fix`
 
-Lint fix all packages.
+Concurrently lint fixes all packages.
 
 ### `npm run clean`
 
@@ -34,7 +34,3 @@ This is normally executed by our Github Action.
 Changesets: [https://github.com/atlassian/changesets](https://github.com/atlassian/changesets)
 Changesets Action: [https://github.com/changesets/action](https://github.com/changesets/action)
 Example output: [https://github.com/chakra-ui/chakra-ui/pull/3813](https://github.com/chakra-ui/chakra-ui/pull/3813)
-
-## Development
-
-See [Lerna](https://github.com/lerna/lerna#getting-started)
