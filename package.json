@@ -1,0 +1,74 @@
+{
+  "name": "alchemist-ui",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemistcoin/alchemist-ui.git"
+  },
+  "scripts": {
+    "build": "lerna run build --stream",
+    "prestart": "npm && npm run bootstrap",
+    "start": "lerna run start --stream",
+    "test": "lerna run test --stream",
+    "lint": "lerna run lint --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "lint:ci": "lerna run lint --stream",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "version:packages": "changeset version",
+    "prepare": "husky install",
+    "create": "npx create-react-app --template typescript --"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.5.1",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.20.10",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "framer-motion": "^4.0.0",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.2.4",
+    "web-vitals": "^1.1.1"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.2.7",
+    "@changesets/cli": "^2.16.0",
+    "lerna": "^4.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,scss,md,json,yml}": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  }
+}
